@@ -1,0 +1,14 @@
+{
+    "token":"xoxb-1234567-QwErTy1a2s3d4f5g",
+    "group":"botchan",
+    "cam_base":"http://home.com/cams/",
+    "cams":{
+	"bedroom":["cam-bedroom-1", "cam-bedroom-2"],
+	"outside":["cam-garden", "cam-street"],
+    },
+    "open":{
+	"parking":"http://home.com/open.php?key==12345-abcde&door=parking",
+	"house":"http://home.com/open.php?key==12345-abcde&door=house"
+    }
+}
+

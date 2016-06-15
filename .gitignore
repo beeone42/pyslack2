@@ -1,0 +1,4 @@
+cache/*.jpg
+config.json
+*~
+*.pyc
