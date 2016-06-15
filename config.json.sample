@@ -1,6 +1,7 @@
 {
     "token":"xoxb-1234567-QwErTy1a2s3d4f5g",
     "group":"botchan",
+    "master":"mynick",
     "cam_base":"http://home.com/cams/",
     "cams":{
 	"bedroom":["cam-bedroom-1", "cam-bedroom-2"],
