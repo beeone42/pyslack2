@@ -1,9 +1,11 @@
+from slackbot.bot import respond_to
 from slackbot.bot import listen_to
 from bot import *
 import re
 
 msg_help['snap'] = "*snap* _# grab snap from mac_"
 
+@respond_to('^snap$')
 @listen_to('^snap$')
 def snap(message):
     if (my_chan(message)):

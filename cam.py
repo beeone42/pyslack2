@@ -1,9 +1,11 @@
+from slackbot.bot import respond_to
 from slackbot.bot import listen_to
 from bot import *
 import re
 
 msg_help['cam'] = "*cam* [cam_name] _# without arg show cam list, with arg upload cam pic_"
 
+@respond_to('^cam$')
 @listen_to('^cam$')
 def cam(message):
     if (my_chan(message)):
@@ -37,6 +39,7 @@ def cam_get_pic(message, c):
         print inst
         message.send(str(type(inst)))
 
+@respond_to('^cam ([a-zA-Z0-9-]+)$')
 @listen_to('^cam ([a-zA-Z0-9-]+)$')
 def cam_pic(message, c):
     if (my_chan(message)):
