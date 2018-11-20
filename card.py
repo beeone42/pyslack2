@@ -34,7 +34,7 @@ def card_print_pdf(message, c):
     card_name = c + ".pdf"
     print("print card " + card_name)
     try:
-        subprocess.call(['/usr/bin/lp', '-d', 'EVOLIS', '-o', 'media=card', 'cache/' + card_name])        
+        subprocess.call(['/usr/bin/lp', '-d', 'EVOLIS', '-o', 'media=card', '-o', 'orientation-requested=4', '-o', 'GRibbonType/Ribbon=RC_YMCKO', 'cache/' + card_name])
     except Exception as inst:
         print("error printing card " + card_name)
         message.send("Error printing card: " + card_name)
