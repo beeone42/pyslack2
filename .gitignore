@@ -1,4 +1,5 @@
 cache/*.jpg
+cache/*.pdf
 config.json
 *~
 *.pyc

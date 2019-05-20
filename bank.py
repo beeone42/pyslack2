@@ -18,7 +18,15 @@ def balance(message, login):
 def ops(message, login):
     if (my_chan(message)):
         r = requests.get(config['bank_base'] + "ops.php?login=" + login + "&vendor=" + config['bank_vendor'] + "&key=" + config['bank_key'])
-        message.send(r.content)
+        res = json.loads(r.content)
+        if ('success' in res):
+            if (res['success']):
+                for op in res['ops']:
+                    message.send("%s: %s/*%s* %s _(%s)_" % (op['t'], op['vendor'], op['type'], op['montant'], op['details']))
+            else:
+                message.send("Failed: %s" % r.content)
+        else:
+            message.send(r.content)
 
 @listen_to('^credit ([a-zA-Z0-9_-]+) ([0-9.]+)$')
 def credit(message, login, amount):
