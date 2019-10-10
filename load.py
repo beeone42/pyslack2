@@ -1,6 +1,6 @@
 from slackbot.bot import listen_to
 from bot import *
-import re, os
+import re, os, socket
 
 msg_help['load'] = "*load* _# display load average_"
 
@@ -8,5 +8,5 @@ msg_help['load'] = "*load* _# display load average_"
 def load(message):
     if (my_chan(message)):
         l = os.getloadavg()
-        print "%.2f " * len(l) % tuple(l)
-        message.send("%.2f " * len(l) % tuple(l))
+        print socket.gethostname() + " : " + "%.2f " * len(l) % tuple(l)
+        message.send(socket.gethostname() + " : " + "%.2f " * len(l) % tuple(l))
