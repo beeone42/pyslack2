@@ -1,4 +1,3 @@
-from slackbot.bot import respond_to
 from slackbot.bot import listen_to
 from bot import *
 import re
@@ -52,7 +51,6 @@ def card_print_pdf(message, c, year):
         print inst
         message.send(str(type(inst)))
 
-@respond_to('^card ([a-zA-Z0-9_-]+)$')
 @listen_to('^card ([a-zA-Z0-9_-]+)$')
 def card_login(message, c):
     if (my_chan(message)):
@@ -60,7 +58,6 @@ def card_login(message, c):
         card_get_pdf(message, c, '')
         card_send_pdf(message, c, '')
 
-@respond_to('^card ([a-zA-Z0-9_-]+) ([0-9]+)$')
 @listen_to('^card ([a-zA-Z0-9_-]+) ([0-9]+)$')
 def card_login(message, c, year):
     if (my_chan(message)):
@@ -68,7 +65,6 @@ def card_login(message, c, year):
         card_get_pdf(message, c, year)
         card_send_pdf(message, c, year)
 
-@respond_to('^print ([a-zA-Z0-9_-]+)$')
 @listen_to('^print ([a-zA-Z0-9_-]+)$')
 def print_login(message, c):
     if (my_chan(message)):
@@ -76,7 +72,6 @@ def print_login(message, c):
         card_get_pdf(message, c, '')
         card_print_pdf(message, c, '')
 
-@respond_to('^print ([a-zA-Z0-9_-]+) ([0-9]+)$')
 @listen_to('^print ([a-zA-Z0-9_-]+) ([0-9]+)$')
 def print_login(message, c, year):
     if (my_chan(message)):

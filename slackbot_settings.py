@@ -10,5 +10,5 @@ with open("config.json") as json_data_file:
     ERRORS_TO = bot.config["master"]
 
 DEFAULT_REPLY = "Sorry but I didn't understand you"
-PLUGINS = ['help', 'cam', 'open', 'snap', 'load', 'usage', 'bank', 'ping', 'card']
-DEBUG = False
+PLUGINS = ['help', 'usage', 'ping', 'card', 'debug', 'porte']
+DEBUG = True
