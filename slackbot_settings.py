@@ -12,3 +12,4 @@ with open("config.json") as json_data_file:
 DEFAULT_REPLY = "Sorry but I didn't understand you"
 PLUGINS = ['help', 'cam', 'open', 'snap', 'load', 'usage', 'bank', 'ping', 'card', 'debug', 'porte']
 DEBUG = False
+
